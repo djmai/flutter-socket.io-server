@@ -21,9 +21,14 @@
       console.log('Perdimos conexión')
     })
 
-    socket.emit('mensaje', { nombre: 'Fernando' });
+    // socket.emit('mensaje', { nombre: 'Fernando' });
 
-    socket.on('mensaje', (payload) => {
+    socket.on('active-bands', (bands) => {
+      console.clear()
+      console.table(bands)
+    })
+
+    socket.on('nuevo-mensaje', (payload) => {
       console.log('Escuchando: ', payload)
     })
   </script>
